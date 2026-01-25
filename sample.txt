@@ -1,0 +1,6 @@
+{"id":1,"name":"Apple","price":120}
+{"id":2,"name":"Banana","price":40}
+{"id":3,"name":"Orange","price":60}
+{"id":4,"name":"Mango","price":150}
+{"id":5,"name":"Grapes","price":90}
+{"id":6,"name":"Papaya","price":70}

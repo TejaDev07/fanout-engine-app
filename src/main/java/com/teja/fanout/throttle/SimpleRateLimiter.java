@@ -1,25 +1,17 @@
 package com.teja.fanout.throttle;
 
 public class SimpleRateLimiter {
-
-    private final long intervalMillis;
+    private final long intervalMs;
     private long lastTime = 0;
 
     public SimpleRateLimiter(int permitsPerSecond) {
-        this.intervalMillis = 1000L / permitsPerSecond;
+        this.intervalMs = 1000L / permitsPerSecond;
     }
 
-    public synchronized void acquire() {
+    public synchronized void acquire() throws InterruptedException {
         long now = System.currentTimeMillis();
-        long waitTime = lastTime + intervalMillis - now;
-
-        if (waitTime > 0) {
-            try {
-                Thread.sleep(waitTime);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
+        long wait = intervalMs - (now - lastTime);
+        if (wait > 0) Thread.sleep(wait);
         lastTime = System.currentTimeMillis();
     }
 }

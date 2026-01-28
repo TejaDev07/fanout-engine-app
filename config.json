@@ -1,0 +1,10 @@
+{
+  "filePath": "sample.txt",
+  "queueSize": 1000,
+  "rateLimits": {
+    "rest": 2,
+    "grpc": 2,
+    "mq": 1,
+    "db": 1
+  }
+}

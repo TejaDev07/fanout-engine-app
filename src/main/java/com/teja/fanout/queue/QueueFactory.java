@@ -5,7 +5,8 @@ import java.util.concurrent.BlockingQueue;
 
 public class QueueFactory {
 
-    public static BlockingQueue<String> createQueue(int size) {
+    // ✅ This method MUST exist
+    public static BlockingQueue<String> create(int size) {
         return new ArrayBlockingQueue<>(size);
     }
 }

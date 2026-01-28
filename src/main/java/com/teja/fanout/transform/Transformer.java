@@ -1,5 +1,5 @@
 package com.teja.fanout.transform;
 
 public interface Transformer<T> {
-    T transform(String record);
+    T transform(String input);
 }
